@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "183735898664",
+    "project_id": "travelbuddies-c21d8",
+    "storage_bucket": "travelbuddies-c21d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183735898664:android:c6a44459c3b914cef51b1d",
+        "android_client_info": {
+          "package_name": "com.example.travelbuddies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183735898664-pjf1idcd3kpt2ihqlogsrupr85a8bn8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEJ-OhptivnMJus0EuRW037zFdWgr7u68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183735898664-2i9e2u9ki7r9lr4gk3d26gfh491l5d2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183735898664:android:e5dfa0d3348b85a7f51b1d",
+        "android_client_info": {
+          "package_name": "com.flybees.travelbuddies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183735898664-qe3dj1v39po1kqoe2u6ru50tg0i44dos.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flybees.travelbuddies",
+            "certificate_hash": "b9dcc57150fdf6b02fa0ef2fe849a9eed535af31"
+          }
+        },
+        {
+          "client_id": "183735898664-pjf1idcd3kpt2ihqlogsrupr85a8bn8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEJ-OhptivnMJus0EuRW037zFdWgr7u68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183735898664-2i9e2u9ki7r9lr4gk3d26gfh491l5d2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
