@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Travel Buddies</string>
+    <string name="logo">Logo</string>
+    <string name="text_logo">Text Logo</string>
+    <string name="login_button">Login Button</string>
+<!--    <string name="default_web_client_id" translatable="false">183735898664-pjf1idcd3kpt2ihqlogsrupr85a8bn8n.apps.googleusercontent.com</string>-->
+</resources>

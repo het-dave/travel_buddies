@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/Profile_Photo"
+        android:layout_width="104dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="64dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/image1"
+        app:layout_constraintEnd_toEndOf="@+id/RectangleBG"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@+id/RectangleBG"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/RectangleBG"
+        android:src="@drawable/rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Profile_Photo"/>
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Dave Het Kalpit (B21CS020)"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/RectangleBG"
+        app:layout_constraintEnd_toEndOf="@+id/RectangleBG"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/RectangleBG"
+        app:layout_constraintTop_toTopOf="@+id/RectangleBG"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EMAIL ID:"
+        android:textColor="#000000 "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/RectangleBG"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RectangleBG"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EmailBG"
+        android:src="@drawable/emailid"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/Email"
+        app:layout_constraintTop_toBottomOf="@+id/Email"/>
+
+    <TextView
+        android:id="@+id/EmailID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dave.2@iitj.ac.in"
+        android:textColor="#AAA6A6"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@+id/EmailBG"
+        app:layout_constraintTop_toTopOf="@+id/EmailBG"
+        app:layout_constraintBottom_toBottomOf="@+id/EmailBG"/>
+
+    <TextView
+        android:id="@+id/Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PHONE NUMBER:"
+        android:textColor="#000000 "
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/Email"
+        app:layout_constraintTop_toBottomOf="@+id/EmailBG"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PhoneBG"
+        android:src="@drawable/backgroundrectangle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/Email"
+        app:layout_constraintTop_toBottomOf="@+id/Phone"/>
+
+    <TextView
+        android:id="@+id/PhoneNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+91 70693 85199"
+        android:textColor="#AAA6A6"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@+id/PhoneBG"
+        app:layout_constraintTop_toTopOf="@+id/PhoneBG"
+        app:layout_constraintBottom_toBottomOf="@+id/PhoneBG"/>
+
+    <TextView
+        android:id="@+id/Gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GENDER:"
+        android:textColor="#000000 "
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/Email"
+        app:layout_constraintTop_toBottomOf="@+id/PhoneBG"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/GenderBG"
+        android:src="@drawable/backgroundrectangle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/Email"
+        app:layout_constraintTop_toBottomOf="@+id/Gender"/>
+
+    <TextView
+        android:id="@+id/GenderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:textColor="#AAA6A6"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@+id/GenderBG"
+        app:layout_constraintTop_toTopOf="@+id/GenderBG"
+        app:layout_constraintBottom_toBottomOf="@+id/GenderBG"/>
+
+    <ImageView
+        android:id="@+id/Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/google_api_key"
+        android:src="@drawable/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/GenderBG" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SaveText"
+        android:text="SAVE"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/Save"
+        app:layout_constraintStart_toStartOf="@+id/Save"
+        app:layout_constraintTop_toTopOf="@+id/Save"
+        app:layout_constraintBottom_toBottomOf="@+id/Save"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
