@@ -73,3 +73,32 @@ class Profiler:AppCompatActivity() {
     }
 
 }
+
+//// Create a new PopupWindow object
+//PopupWindow popupWindow = new PopupWindow(context);
+//
+//// Inflate the layout for your custom pop up
+//View view = LayoutInflater.from(context).inflate(R.layout.popup_window, null);
+//
+//// Set the view of your PopupWindow object to the inflated layout
+//popupWindow.setContentView(view);
+
+//Back Button
+//override fun onCreate(savedInstanceState: Bundle?) {
+//    super.onCreate(savedInstanceState)
+//    setContentView(R.layout.activity_main)
+//
+//    // set toolbar as support action bar
+//    setSupportActionBar(toolbar)
+//
+//    // show back button on toolbar
+//    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//
+//    // on back button press, it will navigate to parent activity
+//    toolbar.setNavigationOnClickListener {
+//        onBackPressed()
+//    }
+//}
+
+//Add Sidebar Menu
+//https://code.tutsplus.com/tutorials/how-to-code-a-navigation-drawer-in-an-android-app--cms-30263
