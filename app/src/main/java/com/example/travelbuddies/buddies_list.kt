@@ -1,5 +1,6 @@
 package com.example.travelbuddies
 
+import android.content.Intent
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -32,8 +33,15 @@ class buddies_list : AppCompatActivity() {
 
 
 
+        val BuddyAdapter=BuddyAdapter(this,buddieslist)
+        binding.recyclerView.adapter =BuddyAdapter
+//        applying OnClickListner to our adapter
+        BuddyAdapter.setOnClickListener(object: BuddyAdapter.OnClickListener{
+            override fun onClick(position :Int , model : buddy){
+                Toast.makeText(this@buddies_list, model.name.toString(), Toast.LENGTH_SHORT).show()
+            }
+        })
 
-        binding.recyclerView.adapter = BuddyAdapter(this,buddieslist)
 //        loop through the database and add the users to the list
         binding.recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         database.child("users").addValueEventListener(object : ValueEventListener {
@@ -64,6 +72,8 @@ class buddies_list : AppCompatActivity() {
             }
 
         })
+
+
 
     }
 
