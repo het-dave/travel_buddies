@@ -1,11 +1,14 @@
 package com.example.travelbuddies
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
+import android.view.View
+import android.view.Window
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.travelbuddies.databinding.BuddiesListBinding
 import com.google.firebase.database.DataSnapshot
@@ -19,6 +22,7 @@ class buddies_list : AppCompatActivity() {
     lateinit var binding : BuddiesListBinding
     lateinit var database: DatabaseReference
     var buddieslist = ArrayList<buddy>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +43,21 @@ class buddies_list : AppCompatActivity() {
         BuddyAdapter.setOnClickListener(object: BuddyAdapter.OnClickListener{
             override fun onClick(position :Int , model : buddy){
                 Toast.makeText(this@buddies_list, model.name.toString(), Toast.LENGTH_SHORT).show()
+                    var dialog = Dialog(this@buddies_list)
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+                    dialog.getWindow()?.setBackgroundDrawableResource(android.R.color.transparent);
+                    dialog.setCancelable(false)
+                    dialog.setContentView(R.layout.send_request_popup)
+                    dialog.findViewById<TextView>(R.id.reallysend).text="Send a request to ${model.name}?"
+                    dialog.findViewById<Button>(R.id.yes).setOnClickListener(View.OnClickListener {
+                        dialog.dismiss()
+                    })
+                    dialog.findViewById<Button>(R.id.no).setOnClickListener(View.OnClickListener {
+                        dialog.dismiss()
+                    })
+
+                    dialog.show()
+
             }
         })
 
@@ -73,8 +92,35 @@ class buddies_list : AppCompatActivity() {
 
         })
 
-
-
     }
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+//        val uid=intent.getStringExtra("uid")
+//        val intent : Intent = Intent(this, Toggler::class.java)
+//        intent.putExtra("uid",uid)
+//        //         set switch to on if toogle is true
+//       val switch=Toggler().findViewById<Switch>(R.id.idSwitch)
+//        switch.isChecked=false
+//        database.child("users").child(uid!!).child("toogle").get().addOnSuccessListener {
+//            it.value == false
+//
+//
+//        }
+//        startActivity(intent)
+//    }
 
 }
+
+
+//findViewById<ImageView>(R.id.imageView1).setOnClickListener {
+//    Toast.makeText(this, "clicked image", Toast.LENGTH_SHORT).show()
+//    var dialog = Dialog(this)
+//    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+//    dialog.setCancelable(false)
+//    dialog.setContentView(R.layout.friend_request_popup)
+//    dialog.btnAccept.setOnClickListener {
+//        Toast.makeText(this, "clicked accept", Toast.LENGTH_SHORT).show()
+//        dialog.dismiss()
+//    }
+//    dialog.show()
+//}

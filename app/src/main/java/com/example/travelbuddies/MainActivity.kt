@@ -1,10 +1,13 @@
 package com.example.travelbuddies
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -25,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 //        setContentView(R.layout.profile)
 
+
+
         auth = FirebaseAuth.getInstance()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -35,7 +40,9 @@ class MainActivity : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         findViewById<ImageButton>(R.id.imageButton).setOnClickListener {
+
             signInGoogle()
+
         }
 
 
@@ -97,7 +104,9 @@ class MainActivity : AppCompatActivity() {
 
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "6", Toast.LENGTH_SHORT).show()
+//                toast error
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+
             }
         }
     }
