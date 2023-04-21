@@ -1,6 +1,7 @@
 package com.example.travelbuddies
 
 import android.content.Context
+import android.content.DialogInterface.OnClickListener
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class BuddyAdapter(val requiredContext: Context,private val  buddieslist: ArrayList<buddy>) : RecyclerView.Adapter<BuddyAdapter.buddyViewHolder>() {
+
+    private var onCLickListener: OnClickListener?=null
 
     class buddyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name = itemView.findViewById<TextView>(R.id.textView2)
@@ -29,6 +32,18 @@ class BuddyAdapter(val requiredContext: Context,private val  buddieslist: ArrayL
         val buddy = buddieslist[position]
         holder.name.text = buddy.name
         holder.email.text = buddy.email
+        holder.itemView.setOnClickListener{
+            if(onCLickListener != null){
+                onCLickListener !!.onClick(position,buddy)
+            }
+        }
+    }
+    fun setOnClickListener(onClickListener: OnClickListener){
+        this.onCLickListener=onClickListener
+    }
+    interface OnClickListener{
+        fun onClick(position: Int,model: buddy)
+
     }
 
 
