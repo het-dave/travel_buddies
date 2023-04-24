@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="404dp"
+        android:layout_height="102dp"
+        android:outlineAmbientShadowColor="@color/black"
+        android:outlineSpotShadowColor="@color/black"
+        android:paddingLeft="30dp"
+        android:paddingTop="5dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/list_rect_green" />
+
+    <ImageView
+        android:id="@+id/buddypic"
+        android:layout_width="66dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.543"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/buddyname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/autor_one"
+        android:text="Dave Het Kalpit (B21CS020)"
+        android:textColor="#FFFFFF"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toEndOf="@+id/buddypic"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/buddyemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/autor_one"
+        android:text="dave.2@iitj.ac.in"
+        android:textSize="12sp"
+        android:textColor="#F8F4F4"
+        app:layout_constraintStart_toEndOf="@+id/buddypic"
+        app:layout_constraintTop_toBottomOf="@+id/buddyname"
+        app:layout_constraintBottom_toTopOf="@+id/buddyphone"
+        app:layout_constraintVertical_bias="0.475" />
+
+    <TextView
+        android:id="@+id/buddyphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/autor_one"
+        android:text="+91 7069385199"
+        android:textSize="12sp"
+        android:textColor="#F8F4F4"
+        app:layout_constraintStart_toEndOf="@+id/buddypic"
+        app:layout_constraintTop_toBottomOf="@+id/buddyemail"
+        app:layout_constraintBottom_toTopOf="@+id/buddygender"
+        app:layout_constraintVertical_bias="0.475" />
+
+    <TextView
+        android:id="@+id/buddygender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/autor_one"
+        android:text="MALE"
+        android:textSize="12sp"
+        android:textColor="#F8F4F4"
+        app:layout_constraintStart_toEndOf="@+id/buddypic"
+        app:layout_constraintTop_toBottomOf="@+id/buddyphone"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintVertical_bias="0.475" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,37 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:layout_gravity="center">
 
     <ImageView
         android:id="@+id/Profile_Photo"
-        android:layout_width="104dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="117dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="44dp"
         android:scaleType="centerInside"
         android:src="@drawable/image1"
         app:layout_constraintEnd_toEndOf="@+id/RectangleBG"
-        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="@+id/RectangleBG"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
         android:id="@+id/RectangleBG"
+        android:layout_width="169dp"
+        android:layout_height="60dp"
         android:src="@drawable/rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Profile_Photo"/>
+        app:layout_constraintTop_toBottomOf="@id/Profile_Photo" />
 
     <TextView
         android:id="@+id/Name"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="169dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/autor_one"
         android:gravity="center"
         android:text="Dave Het Kalpit (B21CS020)"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/RectangleBG"
         app:layout_constraintEnd_toEndOf="@+id/RectangleBG"
@@ -47,23 +48,24 @@
         android:id="@+id/Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="264dp"
+        android:gravity="center"
         android:text="EMAIL ID:"
         android:textColor="#000000 "
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/RectangleBG"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RectangleBG"
-        android:gravity="center"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RectangleBG" />
 
     <ImageView
+        android:id="@+id/EmailBG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/EmailBG"
         android:src="@drawable/emailid"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/Email"
-        app:layout_constraintTop_toBottomOf="@+id/Email"/>
+        app:layout_constraintTop_toBottomOf="@+id/Email" />
 
     <TextView
         android:id="@+id/EmailID"
@@ -72,99 +74,130 @@
         android:text="dave.2@iitj.ac.in"
         android:textColor="#AAA6A6"
         android:textSize="20sp"
-        android:layout_marginStart="5dp"
-        app:layout_constraintStart_toStartOf="@+id/EmailBG"
+        app:layout_constraintBottom_toBottomOf="@+id/EmailBG"
+        app:layout_constraintEnd_toEndOf="@+id/EmailBG"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="@+id/Email"
         app:layout_constraintTop_toTopOf="@+id/EmailBG"
-        app:layout_constraintBottom_toBottomOf="@+id/EmailBG"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/Phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="PHONE NUMBER:"
         android:textColor="#000000 "
         android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/Email"
-        app:layout_constraintTop_toBottomOf="@+id/EmailBG"
-        android:gravity="center"/>
+        app:layout_constraintTop_toBottomOf="@+id/EmailBG" />
 
     <ImageView
+        android:id="@+id/PhoneBG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/PhoneBG"
         android:src="@drawable/backgroundrectangle"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/Email"
-        app:layout_constraintTop_toBottomOf="@+id/Phone"/>
+        app:layout_constraintTop_toBottomOf="@+id/Phone" />
 
-    <TextView
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/PhoneNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+91 70693 85199"
         android:textColor="#AAA6A6"
         android:textSize="20sp"
-        android:layout_marginStart="5dp"
-        app:layout_constraintStart_toStartOf="@+id/PhoneBG"
-        app:layout_constraintTop_toTopOf="@+id/PhoneBG"
-        app:layout_constraintBottom_toBottomOf="@+id/PhoneBG"/>
+        app:layout_constraintBottom_toBottomOf="@+id/PhoneBG"
+        app:layout_constraintStart_toStartOf="@+id/EmailBG"
+        app:layout_constraintTop_toTopOf="@+id/PhoneBG" />
 
     <TextView
         android:id="@+id/Gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="288dp"
+        android:gravity="center"
         android:text="GENDER:"
         android:textColor="#000000 "
         android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/Email"
-        app:layout_constraintTop_toBottomOf="@+id/PhoneBG"
-        android:gravity="center"/>
+        app:layout_constraintTop_toBottomOf="@+id/PhoneNo" />
 
-    <ImageView
+    <Spinner
+        android:id="@+id/GenderBG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/GenderBG"
+        android:layout_marginStart="10dp"
+        android:gravity="center_vertical"
         android:src="@drawable/backgroundrectangle"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/Email"
-        app:layout_constraintTop_toBottomOf="@+id/Gender"/>
+        app:layout_constraintStart_toEndOf="@+id/GenderText"
+        app:layout_constraintTop_toTopOf="@+id/GenderText"
+        app:layout_constraintBottom_toBottomOf="@+id/GenderText"/>
 
     <TextView
         android:id="@+id/GenderText"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:text="Male"
+        android:text="Choose gender"
         android:textColor="#AAA6A6"
         android:textSize="20sp"
-        android:layout_marginStart="5dp"
-        app:layout_constraintStart_toStartOf="@+id/GenderBG"
-        app:layout_constraintTop_toTopOf="@+id/GenderBG"
-        app:layout_constraintBottom_toBottomOf="@+id/GenderBG"/>
+        app:layout_constraintBottom_toTopOf="@+id/Save"
+        app:layout_constraintEnd_toStartOf="@+id/GenderBG"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="@+id/Gender"
+        app:layout_constraintTop_toBottomOf="@+id/Gender"
+        app:layout_constraintVertical_bias="0.142" />
 
     <ImageView
         android:id="@+id/Save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="138dp"
+        android:layout_height="40dp"
         android:contentDescription="@string/google_api_key"
         android:src="@drawable/save"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/animation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/GenderBG" />
+        app:layout_constraintTop_toBottomOf="@id/GenderBG"
+        app:layout_constraintVertical_bias="0.126" />
 
     <TextView
+        android:id="@+id/SaveText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/SaveText"
+        android:fontFamily="@font/autor_one"
         android:text="SAVE"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Save"
         app:layout_constraintEnd_toEndOf="@+id/Save"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="@+id/Save"
         app:layout_constraintTop_toTopOf="@+id/Save"
-        app:layout_constraintBottom_toBottomOf="@+id/Save"/>
+        app:layout_constraintVertical_bias="0.545" />
+
+<!--    <com.airbnb.lottie.LottieAnimationView-->
+<!--        android:id="@+id/imageView6"-->
+<!--        android:layout_width="400dp"-->
+<!--        android:layout_height="400dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView3"-->
+<!--        app:lottie_autoPlay="true"-->
+<!--        app:lottie_loop="true"-->
+<!--        app:lottie_rawRes="@raw/taxi"-->
+<!--        />-->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation"
+        android:layout_width="500dp"
+        android:layout_height="275dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Save"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/college_student_jumping" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

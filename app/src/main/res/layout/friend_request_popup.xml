@@ -11,7 +11,7 @@
     android:layout_width="300dp"
     android:layout_height="200dp"
     android:background="@drawable/popup_shape"
-    android:src="@drawable/popup_shape"
+    android:src="@drawable/popup_shape_request"
     android:id="@+id/background"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -32,12 +32,12 @@
         app:layout_constraintTop_toTopOf="@+id/background" />
 
     <androidx.appcompat.widget.AppCompatButton
-    android:id="@+id/button1"
+    android:id="@+id/accept"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Accept"
     android:src="@drawable/popup_button"
-    app:layout_constraintEnd_toStartOf="@+id/button2"
+    app:layout_constraintEnd_toStartOf="@+id/reject"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView"
     android:layout_marginHorizontal="15dp"
@@ -47,12 +47,12 @@
 />
 
 <androidx.appcompat.widget.AppCompatButton
-    android:id="@+id/button2"
+    android:id="@+id/reject"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Reject"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@+id/button1"
+    app:layout_constraintStart_toEndOf="@+id/accept"
     app:layout_constraintTop_toBottomOf="@+id/textView"
     android:layout_marginHorizontal="15dp"
     android:layout_marginTop="35dp"
