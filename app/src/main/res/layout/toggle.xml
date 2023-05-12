@@ -70,6 +70,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img" />
+
+        <ToggleButton
+            android:id="@+id/hamburge"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:text="ToggleButton"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/hamburge"
+            android:textOn=""
+            android:textOff=""
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
         android:background="#FFFFFF"

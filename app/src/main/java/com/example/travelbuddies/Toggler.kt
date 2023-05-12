@@ -1,11 +1,14 @@
 package com.example.travelbuddies
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
 import android.widget.Switch
 import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.graphics.toColorInt
 import androidx.drawerlayout.widget.DrawerLayout
@@ -25,6 +28,7 @@ class Toggler : AppCompatActivity(),OnNavigationItemSelectedListener{
 
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
+@SuppressLint("MissingInflatedId")
 override fun onStart() {
 
     super.onStart()
@@ -35,9 +39,12 @@ override fun onStart() {
 
 //            drawer code
     val drawer=findViewById<DrawerLayout>(R.id.drawerLayout)
-    actionBarDrawerToggle=ActionBarDrawerToggle(this,drawer,R.string.open,R.string.close);
-    drawer.addDrawerListener(actionBarDrawerToggle!!)
-    actionBarDrawerToggle!!.syncState()
+//    actionBarDrawerToggle=ActionBarDrawerToggle(this,drawer,R.string.open,R.string.close);
+    findViewById<ToggleButton>(R.id.hamburge).setOnClickListener(){
+        drawer.openDrawer(Gravity.LEFT)
+    }
+//    drawer.addDrawerListener()
+//    hamburger!!.syncState()
 //    supportActionBar!!.setDisplayHomeAsUpEnabled(true)
      val navigation=findViewById<NavigationView>(R.id.navigationView)
 
@@ -49,7 +56,7 @@ override fun onStart() {
         val database= Firebase.database.reference
 //         get uid
         uid = Firebase.auth.currentUser?.uid
-        Toast.makeText(this, "uid is $uid", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "uid is $uid", Toast.LENGTH_SHORT).show()
         switch = findViewById(R.id.idSwitch)
 
 //         set switch to on if toogle is true
@@ -85,12 +92,17 @@ override fun onStart() {
             }
 
         }
+
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.about->{
-                Toast.makeText(this,"Anout us",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Developed with love by Team DOLAND TRUMP",Toast.LENGTH_SHORT).show()
             }
             R.id.editDetails->{
 

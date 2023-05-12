@@ -46,7 +46,8 @@ class MyFireBaseMessagingService:FirebaseMessagingService(){
             applicationContext,
             0,
             notificationIntent,
-            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT // setting the mutability flag
+            PendingIntent.FLAG_MUTABLE or PendingIntent.FLAG_CANCEL_CURRENT // setting the mutability flag
+//
         )
         builder.setContentIntent(updatedPendingIntent)
 

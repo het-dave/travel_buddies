@@ -60,7 +60,8 @@ class Profiler:AppCompatActivity() {
     var photo=intent.getStringExtra("photo")
     var email=intent.getStringExtra("email")
     var token=intent.getStringExtra("token")
-    Toast.makeText(this, "photo is $photo", Toast.LENGTH_SHORT).show()
+    var phone=intent.getStringExtra("phone")
+//    Toast.makeText(this, "photo is $photo", Toast.LENGTH_SHORT).show()
     uid=auth.currentUser?.uid
     findViewById<TextView>(R.id.EmailID).text=email
 //        Toast.makeText(this, findViewById<TextView>(R.id.EmailID).text, Toast.LENGTH_SHORT).show()
@@ -68,22 +69,33 @@ class Profiler:AppCompatActivity() {
     Glide.with(this).load(photo).circleCrop().into(findViewById<ImageView>(R.id.Profile_Photo))
 
     database.child("users").child(auth.currentUser?.uid!!).get().addOnSuccessListener {
-        println("HAHAHAHAHAHAHHAHAHAHAHHAHAHAHAHAHHAHAHAHAH");
+//        println("HAHAHAHAHAHAHHAHAHAHAHHAHAHAHAHAHHAHAHAHAH");
 //        name=it.child("name").value.toString()
-        if(it.child("name").value!=null && name==null)
-            findViewById<TextView>(R.id.Name).text=it.child("name").value.toString()
-        if(photo==null && it.child("photo").value!=null){
-            Glide.with(this).load(it.child("photo").value).circleCrop().into(findViewById<ImageView>(R.id.Profile_Photo))
+        if(it.child("name").value!=null && name==null){
+            name=it.child("name").value.toString()
+            findViewById<TextView>(R.id.Name).text=name
         }
 
-        if(it.child("email").value!=null && email==null)
-            findViewById<TextView>(R.id.EmailID).text=it.child("email").value.toString()
+        if(photo==null && it.child("photo").value!=null){
+            photo=it.child("photo").value.toString()
+            Glide.with(this).load(photo).circleCrop().into(findViewById<ImageView>(R.id.Profile_Photo))
+        }
 
-        if(it.child("phoneNo").value!=null)
-            findViewById<TextView>(R.id.PhoneNo).text=it.child("phoneNo").value.toString()
+        if(it.child("email").value!=null && email==null){
+            email=it.child("email").value.toString()
+            findViewById<TextView>(R.id.EmailID).text=email
+        }
+
+
+        if(it.child("phoneNo").value!=null){
+            phone=it.child("phoneNo").value.toString()
+            findViewById<TextView>(R.id.PhoneNo).text=phone
+        }
+
         //        get the uid of the user
         if(token==null && it.child("token").value!=null)
             token=it.child("token").value.toString()
+
 
 
     }

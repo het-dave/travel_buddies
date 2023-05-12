@@ -64,7 +64,7 @@ class buddies_list : AppCompatActivity() {
             override fun onResponse(call: Call<MyResponse?>, response: Response<MyResponse?>) {
                 if (response.code() === 200) {
                     if (response.body()!!.success !== 1) {
-                        Toast.makeText(this@buddies_list, "Failed ", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@buddies_list, "Request Failed,try again", Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -100,7 +100,12 @@ class buddies_list : AppCompatActivity() {
                     var title=dialog.findViewById<TextView>(R.id.textView)
                     var accept=dialog.findViewById<Button>(R.id.accept)
                     var reject=dialog.findViewById<Button>(R.id.reject)
-                    title.text="You have a friend request from ${snapshot.value.toString()}"
+                    database.child("users").child(snapshot.value.toString()!!).get().addOnSuccessListener {
+                        title.text="You have a friend request from ${it.child("name").value.toString()}(${it.child("gender").value.toString()})"
+                    }
+
+
+//                    title.text="You have a friend request from ${snapshot.value.toString()}"
                     accept.setOnClickListener(View.OnClickListener {
                         database.child("users").child(uid!!).child("friends").child(snapshot.value.toString()).setValue("true")
                         database.child("users").child(snapshot.value.toString()).child("friends").child(uid!!).setValue("true")
@@ -126,7 +131,7 @@ class buddies_list : AppCompatActivity() {
         })
         BuddyAdapter.setOnClickListener(object: BuddyAdapter.OnClickListener{
             override fun onClick(position :Int , model : buddy){
-                Toast.makeText(this@buddies_list, model.name.toString(), Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@buddies_list, model.name.toString(), Toast.LENGTH_SHORT).show()
                     var dialog = Dialog(this@buddies_list)
                     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                     dialog.getWindow()?.setBackgroundDrawableResource(android.R.color.transparent);
@@ -158,7 +163,7 @@ class buddies_list : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         database.child("users").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                Toast.makeText(this@buddies_list, "on data change", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@buddies_list, "on data change", Toast.LENGTH_SHORT).show()
                 buddieslist.clear()
                 for (data in snapshot.children) {
                     Log.d("data",data.toString())
@@ -215,22 +220,23 @@ class buddies_list : AppCompatActivity() {
 
         })
 
+
+        findViewById<ImageButton>(R.id.imageButton2).setOnClickListener(View.OnClickListener {
+            val intent : Intent = Intent(this, Toggler::class.java)
+            intent.putExtra("uid",uid)
+            startActivity(intent)
+        })
+
+
     }
-//    override fun onBackPressed() {
-//        super.onBackPressed()
-//        val uid=intent.getStringExtra("uid")
-//        val intent : Intent = Intent(this, Toggler::class.java)
-//        intent.putExtra("uid",uid)
-//        //         set switch to on if toogle is true
-//       val switch=Toggler().findViewById<Switch>(R.id.idSwitch)
-//        switch.isChecked=false
-//        database.child("users").child(uid!!).child("toogle").get().addOnSuccessListener {
-//            it.value == false
-//
-//
-//        }
-//        startActivity(intent)
-//    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val uid=intent.getStringExtra("uid")
+        val intent : Intent = Intent(this, Toggler::class.java)
+        intent.putExtra("uid",uid)
+
+        startActivity(intent)
+    }
 
 //    private fun UpdateToken(){
 //        var firebaseUser: FirebaseUser? = FirebaseAuth.getInstance().currentUser

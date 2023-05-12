@@ -193,7 +193,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("token", token)
 
 
-                Toast.makeText(this,token , Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this,token , Toast.LENGTH_SHORT).show()
 
 
 
